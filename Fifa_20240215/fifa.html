@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>FIFA feladatsor megoldása DOM segítségével</title>
+</head>
+
+<body>
+    <div class="container ">
+        <h1 class="text-center">FIFA feladatsor</h1>
+
+        <!--1.feladat-->
+        <h2>Aktuálisan hány csapat szerepel a ranglistán?</h2>
+        <p id="f1"></p>
+
+
+        <!--2. feladat-->
+        <h2>Mennyi a résztvevő csapatok átlagpontszáma?</h2>
+        <p id="f2"></p>
+
+
+        <!--3. feladat-->
+        <h2>Melyik csapatok, akik az átlagnál több pontot értek el?</h2>
+        <button type="button" class="btn btn-dark w-100 my-3" id="f3feladat">Csapatok megjelenítése</button>
+
+        <table id="f3" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Átlagpont feletti csapatok</th>
+            </tr>
+        </table>
+
+        <!--4. feladat-->
+        <h2>Legtöbbet javító csapat adatait</h2>
+        <button type="button" class="btn btn-dark w-100 my-3" id="f4feladat">Csapat megjelenítése</button>
+
+        <table id="f4" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Helyezés</th>
+                <th>Csapat neve</th>
+                <th>Pontszám</th>
+            </tr>
+        </table>
+
+        <!--5. feladat-->
+        <h2>Megtalálható-e az adott csapat a listában?</h2>
+        <input type="text" class="form-control" id="csapatNeve">
+        <button type="button" class="btn btn-dark w-100 my-3" id="f5feladat">Csapat megadása</button>
+        <p id="f5"></p>
+
+
+        <!--6. feladat-->
+        <h2>Statisztika a helyezések változása alapján csoportosítva mennyi a csapatok száma?</h2>
+
+        <button type="button" class="btn btn-dark w-100 my-3" id="f6feladat">Statisztika megjelenítése</button>
+
+        <table id="f6" class="table table-dark table-striped table-hover table-sm table-bordered">
+            <tr>
+                <th>Változás</th>
+                <th>Csapatok száma</th>
+            </tr>
+        </table>
+    </div>
+    <script src="fifa.js"></script>
+</body>
+
+</html>
