@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Választások</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="szavazatok.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="title">
+            <h1>Választások</h1>
+        </div>
+        <div class="tabContainer">
+            <div class="buttonContainer">
+                <button class="btn" onclick="showPanel(0,'#f44336')">Képviselő jelöltek</button>
+                <button class="btn" onclick="showPanel(1,'#4caf50')">Képviselők száma a pártban</button>
+                <button class="btn" onclick="showPanel(2,'#2196f3')">Képviselő adatai</button>
+                <button class="btn" onclick="showPanel(3,'#9bd4ff')">Szavazatok száma</button>
+                <button class="btn" onclick="showPanel(4,'#b6d7a8')">Szavazatok pártonként</button>
+                <button class="btn" onclick="showPanel(5,'#ffe599')">Legtöbb szavazat</button>
+                <button class="btn" onclick="showPanel(6,'#000000')">Nyertesek</button>
+            </div>
+            <div class="tabPanel">
+                <p id="feladat1"></p>
+                <table id="f1table" class=" table table-danger table-striped table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>Képviselő neve</th>
+                        <th>Képviselő pártja</th>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div class="tabPanel">
+
+                <select id="partosLegordulo" class="form-select aria-label=" Default select example">
+                    <option selected>Nincs kiválasztva</option>
+                    <option value="GYEP">Gyümölcsevők Pártja</option>
+                    <option value="HEP">Húsevől Pártja</option>
+                    <option value="TISZ">Tejivók Párjta</option>
+                    <option value="ZEP">Zöldségevők Párjta</option>
+                    <option value="-">Független</option>
+                </select>
+                <input type="button" class="btn btn-success" value="Kiválasztás" id="listaGomb">
+                <p id="listaSzoveg"></p>
+            </div>
+            <div class="tabPanel">
+                <label for="vezetekNev">Képviselő vezeték neve:</label>
+                <input class="form-control" type="text" id="vezetekNev">
+                <label for="keresztNev">Képviselő kereszt neve:</label>
+                <input class="form-control" type="text" id="keresztNev">
+                <input class="btn btn-primary" type="button" id="nevGomb" value="Megadás">
+                <p id="szavazatMezo"></p>
+
+            </div>
+            <div class="tabPanel">
+                <div id="fankkeret"><canvas id="fank" style="width:100%;max-width:700px"></canvas></div>
+                <p id="szavazatokSzoveg"></p>
+            </div>
+            <div class="tabPanel">
+                <table class="table table-hover table-striped table-success" id="f5table">
+                    <tr>
+                        <th>Párt neve</th>
+                        <th>Szavazatok mennyisége</th>
+                    </tr>
+                </table>
+                <div id="diagramKeret"><canvas id="diagram" style="width:100%;max-width:700px"></canvas></div>
+
+            </div>
+
+            <div class="tabPanel">
+
+                <table id="korzetSzavazatTabla" class="table table-hover table-hover table-striped table-warning">
+                    <tr>
+                        <th>Képviselő neve</th>
+                        <th>Képviselő pártja</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="tabPanel">
+                <table class="table table-hover table-striped table-dark" id="f7table">
+                    <tr>
+                        <th>Választókerület sorszáma</th>
+                        <th>Győztes képviselő neve</th>
+                        <th>Pártja</th>
+                        <th>Megszerzett szavazatok</th>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="szavazatok.js"></script>
+    <script src="fuggvenyek.js"></script>
+    <script src="diagram.js"></script>
+    <script src="navi.js"></script>
+    <script src="kiratas.js"></script>
+
+
+
+</body>
+
+</html>
