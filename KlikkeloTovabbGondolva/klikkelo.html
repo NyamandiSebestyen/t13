@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="HU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeJump</title>
+
+    <link rel="stylesheet" href="kigyo.css">
+
+</head>
+
+<body>
+
+    <p>Újrakezdéshez kattints a számlálóra</p>
+    <div class="menu">
+
+        <p>Meneküléshez kattints a figurára!</p>
+        <p>Válassz nehézséget:</p>
+        <input type="radio" id="vEasy" name="fokozatok" value="7">
+        <label for="veryEasy">Very Easy</label>
+        <input type="radio" id="Easy" name="fokozatok" value="5">
+        <label for="Easy">Easy</label>
+        <input type="radio" id="Medium" name="fokozatok" value="2" checked>
+        <label for="Medium">Medium</label>
+        <input type="radio" id="Hard" name="fokozatok" value="1.5">
+        <label for="Hard">Hard</label>
+        <input type="radio" id="veryHard" name="fokozatok" value="1">
+        <label for="veryHard">Very Hard</label><br><br>
+        <button id="indito">Start</button>
+
+    </div>
+    <h1 id="nyertes"></h1>
+    <div id="ugraloFelirat">O.O<br>O</div>
+    <div id="szamlalo">0</div>
+    <div id="kigyo">
+        <div id="kigyo3"></div>
+        <div id="kigyo2"></div>
+        <div id="kigyo1">O<br>^^^^^^^^</div>
+        <div id="nyelv"><</div>
+        </div>
+
+        <script src="kigyo.js"></script>
+</body>
+
+</html>

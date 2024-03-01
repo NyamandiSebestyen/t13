@@ -1,0 +1,125 @@
+#ugraloFelirat {
+    position: absolute;
+    top: 500px;
+    left: 1000px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 1);
+    border-radius: 100px;
+
+}
+
+#szamlalo {
+    color: black;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 50px;
+    transform: translate(-25px);
+    text-align: center;
+    background-color: rgba(255, 255, 0, 0.941);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+}
+
+#kigyo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 100px;
+
+}
+
+#kigyo1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    background-color: rgb(0, 255, 0);
+    border-radius: 100px;
+    transition: top 2s ease, left 2s ease;
+}
+
+#kigyo2 {
+    position: absolute;
+    top: 25px;
+    left: -70px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    background-color: rgb(0, 255, 0);
+    border-radius: 100px;
+    transition: top 2s ease, left 2s ease;
+}
+
+#kigyo3 {
+    position: absolute;
+    top: 25px;
+    left: -125px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+
+    background-color: rgb(0, 255, 0);
+    border-radius: 100px;
+    transition: top 2s ease, left 2s ease;
+}
+
+#nyelv {
+    position: absolute;
+    top: 45px;
+    left: 110px;
+    width: 50px;
+    padding: 30px;
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+    font-size: 150%;
+    color: rgba(238, 5, 137);
+    border-radius: 100px;
+    transition: top 2s ease, left 2s ease;
+}
+
+p {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+button {
+    margin: 0;
+    position: relative;
+    left: auto;
+    right: auto;
+    cursor: pointer;
+    width: 60px;
+    border-radius: 100%;
+}
+
+.menu {
+    text-align: center;
+    color: white;
+}
+
+body {
+    background-image: url("kigyos.jpg");
+}
+
+h1 {
+    color: yellow;
+    text-align: center;
+}
