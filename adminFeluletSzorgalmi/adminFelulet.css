@@ -72,3 +72,19 @@ form {
 #bezaras:hover {
     background-color: #a1a1a1;
 }
+
+img {
+    height: 20px;
+    cursor: pointer;
+}
+
+#mentes{
+    float: right;
+    clear: both;
+    display: none; 
+}
+
+ #nem,#igen {
+    margin:5px;
+    float: right;
+}

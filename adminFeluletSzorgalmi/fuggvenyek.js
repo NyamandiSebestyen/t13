@@ -63,13 +63,14 @@ function TesztSorBeszuras() {
     let telefonCella = sor.insertCell();//Beszúrom a szükséges cellákat
     let beosztasCella = sor.insertCell();//Beszúrom a szükséges cellákat
     let aktivalCella = sor.insertCell();//Beszúrom a szükséges cellákat
-
+    let szerkesztCella = sor.insertCell();//Beszúrom a szükséges cellákat
     vezNevCella.innerHTML = "teszt";
     kerNevCella.innerHTML = "teszt";
     emailCella.innerHTML = "teszt";
     telefonCella.innerHTML = "teszt";
     beosztasCella.innerHTML = "teszt";
     aktivalCella.innerHTML = "<input type=\"checkbox\" class=\"allapot\">";
+    szerkesztCella.innerHTML = "<img src=\"ceruza.png\" alt=\"Módosítás\" title=\"Módosítás\" class=\"modosito\">";
 }
 
 function UjSorBeszuras() {
@@ -84,6 +85,7 @@ function UjSorBeszuras() {
         let telefonCella = sor.insertCell();//Beszúrom a szükséges cellákat
         let beosztasCella = sor.insertCell();//Beszúrom a szükséges cellákat
         let aktivalCella = sor.insertCell();//Beszúrom a szükséges cellákat
+        let szerkesztCella = sor.insertCell();//Beszúrom a szükséges cellákat
 
         vezNevCella.innerHTML = document.querySelector("#vezNev").value;
         kerNevCella.innerHTML = document.querySelector("#kerNev").value;
@@ -91,6 +93,7 @@ function UjSorBeszuras() {
         telefonCella.innerHTML = document.querySelector("#tel").value;
         beosztasCella.innerHTML = document.querySelector("#beosztas").value;
         aktivalCella.innerHTML = "<input type=\"checkbox\" class=\"allapot\">";
+        szerkesztCella.innerHTML = "<img src=\"ceruza.png\" alt=\"Módosítás\" title=\"Módosítás\" class=\"modosito\">";
     }
 }
 
@@ -117,7 +120,7 @@ function vnevValid() {
         return true;
     } else {
         vnev.style.border = "2px solid red";
-        document.querySelector("#vNevNemValid").innerHTML = 'A "Vezetéknév" mezőnek nagybetűvel kell kezdődnie és csak betüket tartalmazhat. Kérem, javítsa!';
+        document.querySelector("#vNevNemValid").innerHTML = 'A "Vezetéknév" mező kitöltése nem megfelelő. Kérem, javítsa!';
         return false;
     }
 }
@@ -130,7 +133,7 @@ function knevValid() {
         return true;
     } else {
         knev.style.border = "2px solid red";
-        document.querySelector("#kNevNemValid").innerHTML = 'A "Vezetéknév" mezőnek nagybetűvel kell kezdődnie és csak betüket tartalmazhat. Kérem, javítsa!';
+        document.querySelector("#kNevNemValid").innerHTML = 'A "Vezetéknév" mező kitöltése nem megfelelő. Kérem, javítsa!';
         return false;
     }
 }
@@ -184,4 +187,60 @@ function visszater(id) {
 function torles() {
     egesz.style.filter = "blur(2px)"
     figyAblak.style.display = "block";
+}
+
+function modositas() {
+
+    tablazat.addEventListener('click', function (event) {
+        if (event.target.classList.contains("modosito")) {
+            const sor = event.target.closest("tr");
+            const cella = sor.querySelectorAll('td:not(:last-child)');
+            for (let i = 0; i < cella.length; i++) {
+                cella[i].contentEditable = 'true';
+            }
+            const beosztasCella = sor.querySelector("td:nth-child(5)");
+            const cellaErtek = beosztasCella.innerHTML;
+           
+            
+            
+                const opciok = ["FrontEnd fejlesztő","BackEnd fejlesztő","Fullstack fejlesztő","Adatbázis tudós","Projekt leader","SCRUM master"];
+                const legordulo = document.createElement("select");
+                for(let i=0;i<opciok.length;i++){
+                    const opcioElem = document.createElement("option");
+                    opcioElem.value = opciok[i];
+                    opcioElem.textContent = opciok[i];
+                    if(cellaErtek == opciok[i]){
+                        opcioElem.selected = true;
+                    }
+                    legordulo.appendChild(opcioElem);
+                }
+                beosztasCella.innerHTML = "";
+                beosztasCella.appendChild(legordulo);
+            
+            mentGomb.style.display = "block";
+        }
+
+    });
+
+}
+
+function mentes() {
+
+    mentGomb.addEventListener('click', function () {
+        const sorok = document.querySelectorAll("tr");
+        for (let i = 0; i < sorok.length; i++) {
+            const sor = sorok[i];
+            const cella = sor.querySelectorAll('td:not(:last-child)');
+            for (let j = 0; j < cella.length; j++) {
+                cella[j].contentEditable = 'false';
+            }
+            const beosztasCella = sor.querySelector("td:nth-child(5)");
+            if(beosztasCella){
+            const legordulo = beosztasCella.querySelector("select");
+            if(legordulo){
+            const kivalasztottErtek = legordulo.value;
+            beosztasCella.innerHTML = kivalasztottErtek;}}
+        }
+        mentGomb.style.display = "none";
+    });
 }

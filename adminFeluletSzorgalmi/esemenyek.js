@@ -21,3 +21,6 @@ igenGomb.addEventListener("click",function () {
 nemGomb.addEventListener("click", function () {
     visszater("nem");
 });
+
+document.addEventListener('DOMContentLoaded',modositas());
+document.addEventListener('DOMContentLoaded',mentes());
