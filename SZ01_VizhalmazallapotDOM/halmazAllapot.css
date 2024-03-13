@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+header{
+    background-color:#003049;
+    font-family: 'Sixtyfour', sans-serif;
+    color: #edede9;
+    text-align: center;
+    height: 10vh;
+    
+}
+#kep{
+    height: 400px;
+}
+footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color:#003049;
+    height: 10vh;
+    width: 100%;
+}
