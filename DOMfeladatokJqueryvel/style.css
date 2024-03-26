@@ -1,0 +1,22 @@
+#rajz{
+    position:absolute;
+    bottom: 300px;
+    right: 300px;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+}
+
+#cica{
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+#hibaBox{
+    position: fixed;
+    top: 20px;
+    left: 700px;
+    background-color: black;
+    display: none;
+}
